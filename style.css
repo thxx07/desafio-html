@@ -131,7 +131,7 @@ body {
    =================================================== */
 
 .videos {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto 50px auto;  /* centraliza o bloco e dá espaço embaixo */
   padding: 30px 20px;
   text-align: center;
@@ -151,16 +151,18 @@ body {
 }
 
 .lista-videos {
-  display: flex;         /* coloca os itens lado a lado */
-  flex-wrap: wrap;       /* permite quebrar linha em telas pequenas */
+  display: flex;          /* coloca os itens lado a lado, na horizontal */
+  flex-direction: row;    /* garante explicitamente a direção horizontal */
+  flex-wrap: nowrap;      /* não deixa quebrar linha em telas grandes */
   justify-content: center;
-  gap: 20px;             /* espaço entre os cards de vídeo */
+  gap: 20px;              /* espaço entre os cards de vídeo */
 }
 
 /* Cada "card" de vídeo (capa + título) */
 .video-card {
   display: block;
   width: 200px;
+  flex-shrink: 0;         /* impede que o card fique espremido/menor que o previsto */
   text-decoration: none;         /* remove sublinhado padrão do link */
   color: #d8cfc0;
   background-color: #211c19;     /* mesmo tom de fundo usado nos cards de jogos */
@@ -179,12 +181,6 @@ body {
 .video-card img {
   width: 100%;
   display: block;
-}
-
-.video-card p {
-  padding: 10px;
-  font-size: 0.9rem;
-  text-align: center;
 }
 
 /* ===================================================
@@ -217,5 +213,19 @@ body {
   .card {
     width: 100%;         /* cada card ocupa toda a largura disponível */
     max-width: 320px;
+  }
+
+  .videos {
+    max-width: 100%;
+  }
+
+  .lista-videos {
+    overflow-x: auto;      /* permite rolar os vídeos para o lado no celular */
+    justify-content: flex-start;
+    padding-bottom: 10px;
+  }
+
+  .video-card {
+    width: 150px;          /* cards um pouco menores no celular */
   }
 }
