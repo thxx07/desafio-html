@@ -127,6 +127,56 @@ body {
 }
 
 /* ===================================================
+   SEÇÃO DE VÍDEOS DO YOUTUBE
+   =================================================== */
+
+.videos {
+  max-width: 700px;
+  margin: 0 auto 50px auto;  /* centraliza o bloco e dá espaço embaixo */
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #1f1a17;  /* mesmo tom escuro do cabeçalho, pra destacar a seção */
+  border-radius: 10px;
+}
+
+.videos h2 {
+  color: #c9a24b;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.videos-intro {
+  color: #a89b84;
+  margin-bottom: 20px;
+}
+
+.lista-videos {
+  list-style: none;      /* remove as bolinhas padrão da lista */
+  display: flex;         /* coloca os itens lado a lado */
+  flex-wrap: wrap;       /* permite quebrar linha em telas pequenas */
+  justify-content: center;
+  gap: 20px;             /* espaço entre os links */
+}
+
+.lista-videos li {
+  margin-bottom: 0;      /* não precisa mais de espaço embaixo, o "gap" já cuida disso */
+}
+
+.lista-videos a {
+  color: #d8cfc0;
+  text-decoration: none;      /* remove o sublinhado padrão do link */
+  border-bottom: 1px solid #7a2e2e; /* uma linha discreta embaixo do texto */
+  padding-bottom: 2px;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+/* Efeito ao passar o mouse sobre o link do vídeo */
+.lista-videos a:hover {
+  color: #c9a24b;              /* o texto fica dourado */
+  border-color: #c9a24b;       /* a linha embaixo também fica dourada */
+}
+
+/* ===================================================
    RODAPÉ
    =================================================== */
 
