@@ -1,0 +1,160 @@
+/* ===================================================
+   CONFIGURAÇÕES GERAIS
+   =================================================== */
+
+/* Aplica a todos os elementos da página */
+* {
+  margin: 0;             /* remove espaçamento padrão do navegador */
+  padding: 0;            /* remove espaçamento interno padrão */
+  box-sizing: border-box; /* facilita o cálculo de tamanhos com padding e borda */
+}
+
+body {
+  background-color: #14110f;  /* fundo bem escuro, quase preto (cor principal do tema) */
+  color: #d8cfc0;              /* cor do texto: bege claro, lembra pergaminho antigo */
+  font-family: Georgia, 'Times New Roman', serif; /* fonte com aparência mais "medieval" */
+  line-height: 1.6;
+}
+
+/* ===================================================
+   CABEÇALHO
+   =================================================== */
+
+.cabecalho {
+  background-color: #1f1a17;   /* tom escuro levemente diferente do fundo */
+  padding: 40px 20px;          /* espaço interno em cima/baixo e nas laterais */
+  text-align: center;          /* centraliza todo o texto do cabeçalho */
+  border-bottom: 3px solid #7a2e2e; /* linha vermelha escura, como sangue/fogo */
+}
+
+.cabecalho h1 {
+  font-size: 2.5rem;           /* tamanho grande para o título principal */
+  color: #c9a24b;              /* dourado envelhecido, remete a itens/relíquias */
+  letter-spacing: 2px;         /* espaçamento entre letras, dá ar mais solene */
+}
+
+.subtitulo {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #a89b84;
+}
+
+.autor {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #d8cfc0;
+}
+
+/* ===================================================
+   INTRODUÇÃO
+   =================================================== */
+
+.introducao {
+  max-width: 800px;      /* limita a largura do texto para facilitar a leitura */
+  margin: 40px auto;     /* "auto" nas laterais centraliza o bloco na página */
+  padding: 20px;
+  text-align: center;
+}
+
+.introducao h2 {
+  color: #c9a24b;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.introducao p {
+  font-size: 1rem;
+  color: #cfc4b0;
+}
+
+/* ===================================================
+   SEÇÃO DE JOGOS
+   =================================================== */
+
+.jogos {
+  padding: 20px 40px 60px 40px;
+}
+
+.jogos h2 {
+  text-align: center;
+  color: #c9a24b;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+/* Grade que organiza os cards lado a lado e quebra linha sozinha */
+.lista-cards {
+  display: flex;
+  flex-wrap: wrap;       /* permite que os cards "quebrem linha" em telas menores */
+  justify-content: center;
+  gap: 25px;             /* espaço entre os cards */
+}
+
+/* Cada "card" de jogo */
+.card {
+  background-color: #211c19;      /* cor de fundo do card, um pouco mais clara que o body */
+  border: 1px solid #4a3f36;      /* borda sutil marrom escura */
+  border-radius: 10px;            /* deixa as bordas do card arredondadas */
+  padding: 20px;                  /* espaço interno do card */
+  width: 260px;                   /* largura fixa de cada card */
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s; /* deixa o efeito :hover suave */
+}
+
+/* Efeito ao passar o mouse sobre o card */
+.card:hover {
+  transform: translateY(-6px);     /* o card "sobe" um pouco */
+  border-color: #c9a24b;           /* a borda fica dourada ao passar o mouse */
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;         /* mantém a proporção da imagem sem distorcer */
+  border-radius: 6px;        /* arredonda também os cantos da imagem */
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  color: #c9a24b;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #c2b8a3;
+}
+
+/* ===================================================
+   RODAPÉ
+   =================================================== */
+
+.rodape {
+  text-align: center;
+  padding: 20px;
+  background-color: #1f1a17;
+  color: #a89b84;
+  font-size: 0.85rem;
+  border-top: 3px solid #7a2e2e;
+}
+
+/* ===================================================
+   RESPONSIVIDADE (telas menores, como celular)
+   =================================================== */
+
+@media (max-width: 600px) {
+
+  .cabecalho h1 {
+    font-size: 1.8rem;   /* título menor em telas pequenas */
+  }
+
+  .jogos {
+    padding: 20px 15px;  /* menos espaço lateral em telas pequenas */
+  }
+
+  .card {
+    width: 100%;         /* cada card ocupa toda a largura disponível */
+    max-width: 320px;
+  }
+}
